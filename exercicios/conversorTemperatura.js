@@ -15,7 +15,7 @@ console.log("        === Fahrenheit para Celsius  ===         ")
 console.log("===================================================")
 console.log("")
 //entrada
-f = Number(read.question("Digite a temperatura em Fahrenheit:  "))
+f = Number(read.question("Digite a temperatura em Fahrenheit:  ").replace(",","."))
 
 //processamento
 c =(f -32) / 1.8
