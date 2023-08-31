@@ -1,12 +1,12 @@
 /**
- * estudo dos operadores de atribuição
+ * Estudo dos operadores de atribuição
  */
 
 console.clear
-console.log("operadores de atribuição")
-console.log("+= | soma e atribuição")
-console.log("-= |  subtrção e atrinuição")
-console.log("*= | multiplicação e atribuição")
-console.log(" /=| divisão e atribuição")
-console.log("++ | soma 1 ao resultado") 
-console.log("-- | subtrai 1 do resultado")
+console.log("Operadores de atribuição")
+console.log("+= | Soma e atribuição")
+console.log("-= | Subtração e atribuição")
+console.log("*= | Multipliacação e atribuição")
+console.log("/= | Divisão e atribuição")
+console.log("++ | Soma 1 ao resultado")
+console.log("-- | Subtrai 1 do resultado")
