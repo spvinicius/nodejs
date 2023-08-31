@@ -1,35 +1,41 @@
-leis da programação:
+Leis da programação:
 
-1) entender o problema
-2) pensar sempre no usuário (ux)
-  https://youtu.be/Z1GNW_woXI0
-  código limpo
+1) Entender o problema
+2) Pensar sempre no usuário (UX)
+   https://youtu.be/Z1GNW_woXI0
+3) Código Limpo
+   
+Dica de livro: https://www.amazon.com.br/C%C3%B3digo-limpo-Robert-C-Martin
 
-  Dica do livro:
-  https://www.amazon.com.br/C%C3%B3digo-limpo-Robert-C-Martin/dp/8576082675
------------------------------------------------------------------------------
-  NPM- gerenciador de pacotes node
-  instalação do npm:
-  npm init (responde as perguntas)
-  -gerar o arquivo package.jason
-  npm ls (lista os pacotes (módulos)instalados)
-  npm i nomde _do_pacote (instala o pacote)
+--------------------------------------------
+NPM - Gerenciador de pacotes node
+Instalação do npm:
+npm init (responde as perguntas)
+- gerar o arquivo package.json
+npm ls (lista os pacotes(módulos) instalados)
+npm i nome_do_pacote (instala o pacote)
 
+repositório: npmjs.com
 
-repósitorios: npmjs.com
-
---------------------------------------------------------------------------------
-instalação do pacote readline-sync para imput
+--------------------------------------------
+Instalação do pacote readline-sync para input
 (entrada de dados) via console;
 npm i readline-sync
 
-para usar o recurso (pacote readline-sync):
+Para usar o recurso (pacote readline-sync):
 
-passo 1) importar no inicio do código
+Passo 1) Importar no início do código
 const read = require('readline-sync')
 
-passo 2) nome_variável = read.question("texto qualquer")
-passo 3) nome_variável = Number(read.question("Texto) qualquer"))
+Passo 2) nome_variavel = read.question("Texto qualquer")
+Passo 3) nome_variavel = Number(read.question("Texto qualquer"))
 
-obs: Number ()- converter uma string em número
+Obs: Number() - converte uma string em número
+
+
+
+
+
+
+
 

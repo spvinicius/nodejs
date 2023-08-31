@@ -1,10 +1,10 @@
-Github
-linguagem de marcação markdown
-# título
-## subtítulo
+GitHub
+Linguagem de marcação markdown
+# Título
+## Subtítulo
 ![]() Inserir imagem
 []() Inserir link
-- Bullets
+- bullets
 
-Dica: selo de metadados
-https://shilds.io/
+Dica: Selo de metadados
+https://shields.io/
