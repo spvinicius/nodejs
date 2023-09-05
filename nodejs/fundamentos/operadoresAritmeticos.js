@@ -1,9 +1,8 @@
 /**
- * Estudo dos operadores aritméticos
+ * estudo dos operadores aritméticos
  */
-
 console.clear
-console.log("Operadores aritméticos")
+console.log("operador aritméticos")
 console.log("+ | soma")
 console.log("- | subtração")
 console.log("* | multiplicação")

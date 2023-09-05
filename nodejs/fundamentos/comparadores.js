@@ -1,12 +1,12 @@
 /**
- * Comparadores
+ * comparadores
  */
 
 console.clear
-console.log("Operadores comparativos")
+console.log("operadores comparativos")
 console.log(">   | maior que")
-console.log(">=  | maior ou igual a")
+console.log(">=  | maior ou igual a ")
 console.log("<   | menor que")
-console.log("<=  | menor ou igual a")
-console.log("=== | identico a")
+console.log("<=  | menor igual a")
+console.log("=== | identico a ")
 console.log("!== | não idêntico a")

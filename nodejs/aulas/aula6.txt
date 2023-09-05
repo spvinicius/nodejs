@@ -1,58 +1,53 @@
-Exercício 3 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+exercício 3 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 PDV (Ponto de vendas)
-Desenvolver no scratch e no node um APP para pagamento
-(PDV) de um comércio
+Desenvover no scratch e no node um APP para pagamnto (PDV) de um comércio
 Modelo:
-Total: 300.00 (variável)
-Desconto: 10% (variável)
+Total; 300.00
+Desconto: 10%
 Total com desconto: 270.00 (calculado automaticamente)
 Valor pago em dinheiro: 300.00 (variável)
 Troco: 30.00 (calculado automaticamente)
 
-Cálculo do desconto:
-Total = valor - desconto
+cáclculo do desconto:
+
+total = valor - desconto
 
 //variáveis
-total, valor, desconto, dinheiro, troco (numéricas)
+total,valor, desconto,dinheiro,troco (numéricas)
 
 //entrada
 valor,desconto
 
-//processamento
-total = valor - ( (desconto * valor) / 100 )
+//entrada 2
+dinheiro
 
-//saída
+//processamento
+total = valor - ( )
+
+//procedimento 2 
+troco = dinheiro - total
+
+//saida
 total
 
 //entrada 2
 dinheiro
 
-//processamento 2
-troco = dinheiro - total
 
-//saída 2
-troco
+________________________________________________________________
+10%  de  300 =  30 
+x         y    valor
+resultado = (x * y) /100
+            ( desconto *  valor) / 100
 
-
-
-_____________________________________________________
-Exemplo de cálculo do desconto
-10%  de    300     =   resultado
-x          y      
-desconto   valor
-
-resultado = (x * y) /100 
-            (desconto * valor) / 100
-
-_____________________________________________________
+________________________________________________________________
 Dica:
 .replace("","") //substitui um caractere por outro caractere
 
 Exemplos:
 .replace("Y","y")
 .replace("yes","y")
-.replace("sim","s")
 .replace("no","n")
+.replace("sim","s")
 .replace("não","n")
 .replace(",",".") //substituir a vírgula pelo ponto
-

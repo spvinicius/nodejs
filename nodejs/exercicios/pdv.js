@@ -1,33 +1,37 @@
 /**
- * PDV - Ponto de vendas
+ * PDV - ponto de vendas
  */
 
 // importação de módulos
-const read = require('readline-sync')
+const read =require('readline-sync')
 
 // variáveis
-let total, desconto, valor, dinheiro, troco
+let total, desconto, valor, dinheiro, troco 
 
 console.clear()
-console.log("   ___  ___ _   __")
-console.log("  / _ \\/ _ \\ | / /")
-console.log(" / ___/ // / |/ / ")
-console.log("/_/  /____/|___/ ") 
-console.log("")
+console.log("_____  ________     __")
+console.log("|  __ \|  __ \ \    / /")
+console.log("| |__) | |  | \ \  / / ")
+console.log("|  ___/| |  | |\ \/ /  ")
+console.log("| |    | |__| | \  /   ")
+console.log("|_|    |_____/   \/    ")
 
-// entrada 1
-valor = Number(read.question("Digite o valor total da compra: ").replace(",","."))
-desconto = Number(read.question("Digite o valor do desconto em %: ").replace(",","."))
+
+// entrada
+valor = Number(read.question("Digite o valor total da compra: "))
+desconto = Number(read.question("Digite o valor  do desconto em %: "))
+
 // processamento 1
-total = valor - ((desconto * valor) / 100)
-// saída 1
-console.log(`Total: R$ ${total.toFixed(2)}`)
-console.log("___________________________________")
-// entrada 2
+total = valor - (desconto * valor) / 100
+// saida 1
+console.log(`total: R$ ${total.toFixed(2)}`)
+console.log("")
+console.log("__________________________________")
 dinheiro = Number(read.question("Digite o valor pago em dinheiro: ").replace(",","."))
-// processamento 2
+//processamento 2
 troco = dinheiro - total
-// saída 2
-console.log(`Troco: R$ ${troco.toFixed(2)}`)
+// saida 2
+console.log(`troco: R$ ${troco.toFixed(2)}`)
 
-
+                       
+                       
