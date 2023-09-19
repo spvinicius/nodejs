@@ -1,0 +1,14 @@
+Mandamentos da programação 
+
+1º Mandamento
+Entender o problema
+
+2º Mandamento
+Pensar na UX
+
+3º Mandamento
+Clean code (usar o minimo de recursos possiveis)
+---------------------------------------------------------
+Exercício: Desenvolver no Scratch e no JS um app que informe qual é o cumbustivel mais vantajoso (etanol x gasolina) para abastecer um carro flex
+
+Dar o preço da gasolina e do etanol, verificar qual é menor e recomendar ao cliente
