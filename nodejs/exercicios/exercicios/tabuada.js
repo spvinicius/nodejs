@@ -1,14 +1,14 @@
 /**
- * exemplo de uso do laço for - tabuada
+ * Exemplo de uso do laço for - Tabuada
  */
 
-const read =require (`readline-sync`)
-const color = require(`colors`)
-let valor 
-console.clear()
-console.log("---------tabuada-------")
+const read = require ('readline-sync')
+let valor
 
-valor = Number(read.question("digite o valor da tabuada".red))
+console.clear()
+console.log("TABUADA --------------------")
+valor = Number(read.question("Digite o valor da tabuada: "))
+
 for (let i = 1; i < 11; i++) {
-    console.log(`${valor} x ${i} = (${valor *i})`)
+    console.log(`${valor} x ${i} = ${valor * i}`)
 }

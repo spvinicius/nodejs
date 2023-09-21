@@ -1,29 +1,34 @@
 /**
- * calculo da area e perimetro de um retangulo
+ * Cálculo da área e perímetro de um retângulo
  */
 
-const red = require(`readline-sync`)
+// pacote (bilioteca)
+const read = require('readline-sync')
 
+// variáveis
 let base,altura,area,perimetro
+
 console.clear()
-console.log("retangulo")
+console.log("Retângulo")
+console.log(" __________________ ")
+console.log("|                  |")
+console.log("|                  | altura ")
+console.log("|__________________| ")
+console.log("        base   ")
 console.log("")
-console.log("________________________________")
-console.log("|                               |")
-console.log("|                               | altura ")
-console.log("|                               |")
-console.log("________________________________")
-console.log("               base             ")
-console.log
 
 //entrada
-
+altura = Number(read.question("Digite o valor da altura: ").replace(",","."))
+base = Number(read.question("Digite o valor da base: ").replace(",","."))
 
 //processamento 1
 area = base * altura
-//processamento 2
 
+//processamento 2
 perimetro = base + altura + base + altura
 
-//saida 1 
-console.log(`area do retangulo: ${area.toFixed(2)}`)
+//saída 1
+console.log(`Área do retângulo: ${area.toFixed(2)} metros quadrados`)
+
+//saída 2
+console.log(`Perímetro do retângulo: ${perimetro.toFixed(2)} metros`)
