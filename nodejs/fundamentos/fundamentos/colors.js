@@ -1,10 +1,8 @@
 /**
- * uso do pacote colors
+ * Uso do pacote colors
  */
+
 const colors = require('colors')
 
 console.clear()
-console.log("Hello colors".bgYellow.red)
-
-
-
+console.log("Hello colors".green)
