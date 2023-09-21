@@ -1,27 +1,33 @@
-algoritmo ("receita de bolo")
-exemplo: criar um app para calcular a média de duas notas
+Algorítmo ("receita de bolo")
+Exemplo: Criar um app para calcular a média de duas notas
 
-como calcular a média:                                                                                                                                                            
+Como calcular a média:
 
-       nota 1+ nota 2 
-média=________________
-             2
+         nota 1 + nota 2
+média = _________________
+                2
 
-// variáveis
-3-numéricas (nota1,nota2,media)
+// Variáveis
+3 -> numéricas (nota1,nota2,media)
 
-// entrada
-nota1,nota2
+// Entrada
+nota1, nota2
 
-//processamento
-média= (nota1 + nota2) / 2
+// Processamento
+media = (nota1 + nota2) / 2
 
-// saida
-méda
+// Saída
+media
 
-________________________________________________________________
+________________________________________________
 
-variáveis do mesmo propósito podem ser criadas em uma única linja separadas por virgula 
+Variáveis do mesmo propósito podem ser criadas em uma única linha separadas por vírgula
 
-concatenação (juntar um texto com o conteúdo de uma variável)
-console.log(`texto ${varaável}`)
+Concatenação (Juntar um texto com o conteúdo de uma variável)
+console.log(`Texto ${variável}`)
+
+________________________________________________
+Dica: http://www.network-science.de/ascii/
+
+ASCII Generator (gerador de texto e imagens para console)
+observação \ -> \\

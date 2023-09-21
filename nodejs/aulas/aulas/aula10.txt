@@ -1,23 +1,28 @@
-pacotes = ( funcionalidades escritas em js)
-npm (gerenciador de pacotes)
-____package.json (pincipal arquivo configurção)
+pacotes/módulo = bibliotecas (funcionalidades escritas em JS)
 
-npm init (inicia um novopackage.json )
-npm ls (listar os pacotes intalados)
+npm (gerenciador de pacotes)
+ |___ package.json (principal arquivo configuração)
+
+npm init (inicia um novo package.json)
+npm ls (listar os pacotes instalados)
 npm i ou npm install (instalar um novo pacote)
 
-_________________________________________________
+_______________________________________________
 cd pasta [enter] vai para a pasta(diretório)
-cd ..[enter] volta um nível
+cd .. [enter] volta um nível
 
-_________________________________________________
-estruturas de controle
-condicionais
-if(condição) {
-      
-       //condição verdadeira
+_______________________________________________
+Estruturas de controle
+Condicionais
+if (condição) {
+    //condição verdadeira
+}
+
+if (condição) {
+    //condição verdadeira
 } else {
-      //condição falsa 
-}       
+    //condição falsa
+}
 
-observação: uma condição nunca pode ser verdadeira e falsa ao mesmo tempo
+Observação: Uma condição nunca pode ser verdadeira e falsa ao mesmo tempo
+
