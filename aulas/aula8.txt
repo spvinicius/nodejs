@@ -1,0 +1,10 @@
+Github
+linguagem de marcação markdown
+# título
+## subtítulo
+![]() Inserir imagem
+[]() Inserir link
+- Bullets
+
+Dica: selo de metadados
+https://shilds.io/
