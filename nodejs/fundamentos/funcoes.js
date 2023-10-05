@@ -1,5 +1,6 @@
 /**
  * estudo das funções
+ * funções simples sem parãmetros ou retorno
  */
 
 //função simples
