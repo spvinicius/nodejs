@@ -15,3 +15,8 @@ Extende(reutiliza) atributos e métodos da classe principal
 
 //Polimorfismo
 Modifica o comportamento de um método existente na classe principal
+
+//Encapsulamento
+segurança (protege o acesso as variáveis)
+-- atributos (variáveis)-> privados
+-- métodos especifícos (get e set) são usados para acessar as variáveis

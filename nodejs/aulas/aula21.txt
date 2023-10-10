@@ -1,0 +1,8 @@
+Atividade de avaliação  P002
+Agencia bancária
+desafio:
+1- encapular os atributos da classe conta
+2- criar mais dois objetos (clientes)
+(robson vaamonde e sirlene aparecida)
+3- criar um novo método para transferencias de valores entre contas corrente e também poupança. ex: Leandro -> sirlene | robson -> robson(poupança)
+4-melhorar a experiencia do usuário
