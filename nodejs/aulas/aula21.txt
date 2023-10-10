@@ -4,5 +4,6 @@ desafio:
 1- encapular os atributos da classe conta
 2- criar mais dois objetos (clientes)
 (robson vaamonde e sirlene aparecida)
-3- criar um novo método para transferencias de valores entre contas corrente e também poupança. ex: Leandro -> sirlene | robson -> robson(poupança)
-4-melhorar a experiencia do usuário
+3- criar um novo método "pix" para transferencia de valores entre contas corrente ex: Leandro -> sirlene 
+4- criar um novo método para trasnferir da conta corrente para a conta poupança
+5-melhorar a experiencia do usuario
