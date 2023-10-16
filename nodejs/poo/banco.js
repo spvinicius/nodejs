@@ -1,68 +1,143 @@
 /**
- * exercício de fixação POO
+ * Exercício de fixação - POO
  */
-class conta {
-    //atributos
+
+const read = require('readline-sync')
+const colors = require('colors')
+
+//classe modelo
+class Conta {
+	//Atributos
     constructor(numero, titular, saldo) {
-        this.numero = numero
-        this.titular = titular
-        this.saldo = saldo
+        this._titular = titular
+        this._saldo = saldo
+        this._numero = numero
     }
-    //métodos
+
+    getTitular() {
+        return this._titular
+    }
+
+    getSaldo() {
+        return this._saldo
+    }
+
+    getNumero() {
+        return this._numero
+    }
+	//ações
     exibirSaldo() {
-        console.log(`saldo: R$ ${this.saldo.toFixed(2)}`)
+        console.log(` Saldo da conta ${this.getTitular()} é R$ ${this.getSaldo().toFixed(2)}.`)
     }
-    exibirSaldoP1() {
-        console.log(`saldo conta poupança: R$ ${this.saldo.toFixed(2)}`)
-    }
-    depositar(valor){
-        this.saldo += valor
+
+    depositar(valor) {
+        this._saldo += valor
         console.log(`Crédito de R$ ${valor.toFixed(2)}`)
     }
+
     sacar(valor) {
-        //validação
-        if(valor <= this.saldo) {
-            this.saldo -= valor
-            console.log(`Débito de R$ ${valor.toFixed(2)} `)   
+        if (valor <= this._saldo) {
+            this._saldo -= valor
+            console.log(`Débito de R$ ${valor.toFixed(2)}`)
         } else {
-            console.log("Saque não permitido")
+            console.log("Operação negada! Saldo insuficiente !")
+        }
+    }
+
+    pix(valor, destino) {
+        if (valor <= this._saldo) {
+            this._saldo -= valor
+            destino.depositar(valor)
+            console.log(`PIX R$ ${valor.toFixed(2)} para poupanca ${destino.getTitular()} ,pix realizado com sucesso.`)
+        } else {
+            console.log("Operação negada! Saldo insuficiente.")
         }
     }
 }
 
-/***Clientes***/
+//poupança
+class ContaPoupanca extends Conta {
+	//atributos
+    constructor(numero, titular, saldo) {
+        super(numero, titular, saldo)
+    }
+ 	//metodo
+    exibirSaldoPoupanca() {
+        console.log(`O saldo da conta Poupança do ${this.getTitular()} é R$ ${this.getSaldo().toFixed(2)}.`)
+    }
+}
+
 console.clear()
+console.log("██████   █████  ███    ██  ██████  ██████  ".red)
+console.log("██   ██ ██   ██ ████   ██ ██      ██    ██ ".red)
+console.log("██████  ███████ ██ ██  ██ ██      ██    ██ ".red)
+console.log("██   ██ ██   ██ ██  ██ ██ ██      ██    ██ ".red)
+console.log("██████  ██   ██ ██   ████  ██████  ██████  ".red)
+console.log()
 
-console.log("BBBBBBBBBBBBBBBBB               AAA               NNNNNNNN        NNNNNNNN        CCCCCCCCCCCCC     OOOOOOOOO  ")
-console.log("B::::::::::::::::B             A:::A              N:::::::N       N::::::N     CCC::::::::::::C   OO:::::::::OO   ")
-console.log("B::::::BBBBBB:::::B           A:::::A             N::::::::N      N::::::N   CC:::::::::::::::C OO:::::::::::::OO ")
-console.log("BB:::::B     B:::::B         A:::::::A            N:::::::::N     N::::::N  C:::::CCCCCCCC::::CO:::::::OOO:::::::O")
-console.log("  B::::B     B:::::B        A:::::::::A           N::::::::::N    N::::::N C:::::C       CCCCCCO::::::O   O::::::O")
-console.log("  B::::B     B:::::B       A:::::A:::::A          N:::::::::::N   N::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::BBBBBB:::::B       A:::::A A:::::A         N:::::::N::::N  N::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B:::::::::::::BB       A:::::A   A:::::A        N::::::N N::::N N::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::BBBBBB:::::B     A:::::A     A:::::A       N::::::N  N::::N:::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::B     B:::::B   A:::::AAAAAAAAA:::::A      N::::::N   N:::::::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::B     B:::::B  A:::::::::::::::::::::A     N::::::N    N::::::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::B     B:::::B A:::::AAAAAAAAAAAAA:::::A    N::::::N     N:::::::::N C:::::C       CCCCCCO::::::O   O::::::O")
-console.log("BB:::::BBBBBB::::::BA:::::A             A:::::A   N::::::N      N::::::::N  C:::::CCCCCCCC::::CO:::::::OOO:::::::O")
-console.log("B:::::::::::::::::BA:::::A               A:::::A  N::::::N       N:::::::N   CC:::::::::::::::C OO:::::::::::::OO ")
-console.log("B::::::::::::::::BA:::::A                 A:::::A N::::::N        N::::::N     CCC::::::::::::C   OO:::::::::OO   ")
-console.log("BBBBBBBBBBBBBBBBBAAAAAAA                   AAAAAAANNNNNNNN         NNNNNNN        CCCCCCCCCCCCC     OOOOOOOOO     ")
+//criação Poupança Vaamond
+let cp1 = new ContaPoupanca(10,"Robson Vaamond", 8000)
+console.log(`Cliente: ${cp1.getTitular()} | conta: ${cp1.getNumero()}`.red)
+cp1.exibirSaldoPoupanca()
+console.log()
+//criação Poupança Sirlene
+let cp2 = new ContaPoupanca(20,"Sirlene Aparecida", 7000)
+console.log(`Cliente: ${cp2.getTitular()} | conta: ${cp2.getNumero()}`.red)
+cp2.exibirSaldoPoupanca()
+console.log()
 
-console.log("")
-//instanciar um objeto
-let cc1 = new conta(1, "leandro Ramos", 30000)
-console.log(`Cliente: ${cc1.titular} conta: ${cc1.numero}`)
+let cp3 = new ContaPoupanca(30,"Leandro Ramos", 5000)
+console.log(`Cliente: ${cp3.getTitular()} | conta: ${cp3.getNumero()}`.red)
+cp3.exibirSaldoPoupanca()
+console.log()
+
+//criação Vaamond
+let cc1 = new Conta(1, "Robson Vaamond", 4000)
+console.log(`Cliente: ${cc1.getTitular()} | conta: ${cc1.getNumero()}`.blue)
 cc1.exibirSaldo()
-cc1.depositar(5000)
+cc1.depositar(1000)
 cc1.exibirSaldo()
-cc1.sacar(50000000)
-cc1.exibirSaldo
+cc1.sacar(40)
+cc1.exibirSaldo()
+cc1.pix(300, cp1); // pix de Leandro para Robson
+console.log()
 
-let p1 = new conta(2, "Leandro Ramos" , 10000)
-console.log(`Cliente: ${p1.titular} conta: ${p1.numero}`)
-p1.exibirSaldoP1 ()
+//criação Sirlene
+let cc2 = new Conta (2, "Sirlene Aparecida", 3000)
+console.log(`Cliente: ${cc2.getTitular()} | conta: ${cc2.getNumero()}`.blue)
+cc2.exibirSaldo()
+cc2.depositar(2000)
+cc2.exibirSaldo()
+cc2.sacar(40)
+cc2.exibirSaldo()
+console.log()
 
+let cc3 = new Conta (3, "Leandro Ramos", 1000)
+console.log(`Cliente: ${cc3.getTitular()} | conta: ${cc3.getNumero()}`.blue)
+cc3.exibirSaldo()
+cc3.depositar(2000)
+cc3.exibirSaldo()
+cc3.sacar(40)
+cc3.exibirSaldo()
+cc3.pix(200, cc2); // pix de Leandro para Sirlene
+cc3.pix(100, cp1); // transferência de Leandro para Vaamond Poupança 
+
+console.log()
+console.log("Extrato:");
+console.log()
+console.log(`Cliente: ${cc1.getTitular()} | conta: ${cc1.getNumero()}`.green)
+cc1.exibirSaldo();
+console.log(`Cliente: ${cp1.getTitular()} | conta: ${cp1.getNumero()}`.white)
+cp1.exibirSaldo();
+console.log("----------------------------------------------------------------")
+console.log(`Cliente: ${cc2.getTitular()} | conta: ${cc2.getNumero()}`.green)
+cc2.exibirSaldo();
+console.log(`Cliente: ${cp2.getTitular()} | conta: ${cp2.getNumero()}`.white)
+cp2.exibirSaldo();
+console.log("----------------------------------------------------------------")
+console.log(`Cliente: ${cc3.getTitular()} | conta: ${cc3.getNumero()}`.green)
+cc3.exibirSaldo();
+console.log(`Cliente: ${cp3.getTitular()} | conta: ${cp3.getNumero()}`.white)
+cp3.exibirSaldo();
 
 
