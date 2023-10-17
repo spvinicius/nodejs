@@ -1,7 +1,9 @@
 /**
- * exercício de fixação POO
+ * Exercício de fixação - POO
  */
-class conta {
+
+//modelo
+class Conta {
     //atributos
     constructor(numero, titular, saldo) {
         this.numero = numero
@@ -9,60 +11,87 @@ class conta {
         this.saldo = saldo
     }
     //métodos
+    exibirConta() {
+        console.log("________________________________")
+        console.log(`Titular: ${this.titular} Cc: ${this.numero}`)
+    }
     exibirSaldo() {
-        console.log(`saldo: R$ ${this.saldo.toFixed(2)}`)
+        console.log(`Saldo: R$ ${this.saldo.toFixed(2)}`)
     }
-    exibirSaldoP1() {
-        console.log(`saldo conta poupança: R$ ${this.saldo.toFixed(2)}`)
-    }
-    depositar(valor){
+    depositar(valor) {
         this.saldo += valor
-        console.log(`Crédito de R$ ${valor.toFixed(2)}`)
+        console.log(`Crédito: R$ ${valor.toFixed(2)}`)
     }
     sacar(valor) {
         //validação
-        if(valor <= this.saldo) {
+        if (valor <= this.saldo) {
             this.saldo -= valor
-            console.log(`Débito de R$ ${valor.toFixed(2)} `)   
+            console.log(`Débito: R$ ${valor.toFixed(2)}`)
         } else {
             console.log("Saque não permitido")
         }
     }
+    pix(destinatario, valor) {
+        //validação
+        if (valor <= this.saldo) {
+            this.saldo -= valor //débito de um valor da conta
+            destinatario.saldo += valor //crédito do valor na conta destino
+            console.log(`PIX de R$ ${valor.toFixed(2)} para ${destinatario.titular}`)
+        } else {
+            console.log("Saldo insuficiente para transferência")
+        }
+    }
 }
 
-/***Clientes***/
+//herança
+class contaPoupanca extends Conta {
+    //atributos
+    constructor(numero, titular, saldo) {
+        super(numero, titular, saldo)
+    }
+    //métodos
+    exibirContaPoupanca() {
+        console.log("________________________________")
+        console.log(`Titular: ${this.titular} Cp: 500${this.numero}`)
+    }
+
+    exibirSaldoPoupanca() {
+        console.log(`Saldo de poupança: R$ ${this.saldo.toFixed(2)}`)
+    }
+}
+
+/***** Clientes *****/
 console.clear()
-
-console.log("BBBBBBBBBBBBBBBBB               AAA               NNNNNNNN        NNNNNNNN        CCCCCCCCCCCCC     OOOOOOOOO  ")
-console.log("B::::::::::::::::B             A:::A              N:::::::N       N::::::N     CCC::::::::::::C   OO:::::::::OO   ")
-console.log("B::::::BBBBBB:::::B           A:::::A             N::::::::N      N::::::N   CC:::::::::::::::C OO:::::::::::::OO ")
-console.log("BB:::::B     B:::::B         A:::::::A            N:::::::::N     N::::::N  C:::::CCCCCCCC::::CO:::::::OOO:::::::O")
-console.log("  B::::B     B:::::B        A:::::::::A           N::::::::::N    N::::::N C:::::C       CCCCCCO::::::O   O::::::O")
-console.log("  B::::B     B:::::B       A:::::A:::::A          N:::::::::::N   N::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::BBBBBB:::::B       A:::::A A:::::A         N:::::::N::::N  N::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B:::::::::::::BB       A:::::A   A:::::A        N::::::N N::::N N::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::BBBBBB:::::B     A:::::A     A:::::A       N::::::N  N::::N:::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::B     B:::::B   A:::::AAAAAAAAA:::::A      N::::::N   N:::::::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::B     B:::::B  A:::::::::::::::::::::A     N::::::N    N::::::::::NC:::::C              O:::::O     O:::::O")
-console.log("  B::::B     B:::::B A:::::AAAAAAAAAAAAA:::::A    N::::::N     N:::::::::N C:::::C       CCCCCCO::::::O   O::::::O")
-console.log("BB:::::BBBBBB::::::BA:::::A             A:::::A   N::::::N      N::::::::N  C:::::CCCCCCCC::::CO:::::::OOO:::::::O")
-console.log("B:::::::::::::::::BA:::::A               A:::::A  N::::::N       N:::::::N   CC:::::::::::::::C OO:::::::::::::OO ")
-console.log("B::::::::::::::::BA:::::A                 A:::::A N::::::N        N::::::N     CCC::::::::::::C   OO:::::::::OO   ")
-console.log("BBBBBBBBBBBBBBBBBAAAAAAA                   AAAAAAANNNNNNNN         NNNNNNN        CCCCCCCCCCCCC     OOOOOOOOO     ")
-
+console.log("========= BANK =========")
 console.log("")
-//instanciar um objeto
-let cc1 = new conta(1, "leandro Ramos", 30000)
-console.log(`Cliente: ${cc1.titular} conta: ${cc1.numero}`)
+
+//instanciar objetos
+let cc1 = new Conta(1000, "Leandro Ramos", 10000)
+let cc1p = new contaPoupanca(1000, "Leandro Ramos", 2000)
+let cc2 = new Conta(1001, "Sirlene Aparecida", 5000)
+
+//movimentação de conta corrente
+cc1.exibirConta()
 cc1.exibirSaldo()
-cc1.depositar(5000)
+cc1.sacar(2000)
 cc1.exibirSaldo()
-cc1.sacar(50000000)
-cc1.exibirSaldo
+cc1.depositar(15000)
+cc1.exibirSaldo()
 
-let p1 = new conta(2, "Leandro Ramos" , 10000)
-console.log(`Cliente: ${p1.titular} conta: ${p1.numero}`)
-p1.exibirSaldoP1 ()
+//conta poupança
+cc1p.exibirContaPoupanca()
+cc1p.exibirSaldoPoupanca()
 
+//conta corrente
+cc2.exibirConta()
+cc2.exibirSaldo()
 
+//pix (cc1 para cc2)
+cc1.exibirConta()
+cc1.exibirSaldo()
+cc1.pix(cc2, 1000)
+cc1.exibirSaldo()
 
+//conta corrente
+cc2.exibirConta()
+cc2.exibirSaldo()
